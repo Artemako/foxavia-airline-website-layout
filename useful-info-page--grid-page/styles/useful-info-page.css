@@ -1,0 +1,254 @@
+@import url("../../main-styles/styles.css");
+
+
+/* HEADER */
+
+.header {
+    position: relative;
+    height: 100px;
+}
+
+.logo-header {
+    height: 100px;
+}
+
+.header-inner {
+    display: grid;
+    grid-template-columns: 180px auto 268px;
+    align-items: center;
+}
+
+.navbar {
+    display: grid;
+    align-items: center;
+    position: relative;
+    height: 100px;
+}
+
+.navbar--inner {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    column-gap: 30px;
+    padding: 0 160px 0 79px;
+}
+
+.navbar-item {
+    text-align: center;
+    position: relative;
+}
+
+.navbar-item::after {
+    position: absolute;
+    display: block;
+    content: "";
+    background-color: var(--text--primary-color);
+    height: 2px;
+    width: 100%;
+    margin-top: 10px;
+    opacity: 0;
+    transition: opacity 0.25s ease-out;
+}
+
+.navbar-item:hover::after {
+    opacity: 1;
+}
+
+.navbar-item:active::after {
+    margin-top: 0;
+    visibility: hidden;
+}
+
+.navbar-item--link:active {
+    border: 2px solid var(--text--primary-color);
+}
+
+.navbar-item--link {
+    box-sizing: border-box;
+    padding: 10px;
+    border: 2px solid var(--text--primary-color);
+    border-color: rgba(255, 255, 255, 0);
+    border-radius: 10px;
+}
+
+.account-btn {
+    height: 60px;
+    display: grid;
+    grid-template-columns: 60px 170px;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0);
+    border-radius: 10px;
+}
+
+.account-btn:active{
+    background-color: rgba(255, 255, 255, 0.25);
+}
+
+.account-btn svg path {
+    transition: all 250ms ease-out;
+}
+
+.account-btn svg circle {
+    transition: all 250ms ease-out;
+}
+
+.account-btn:hover {
+    color: var(--btn-color--gray);
+}
+
+.account-btn:hover svg path {
+    fill: var(--btn-color--gray);
+}
+
+.account-btn:hover svg circle {
+    stroke: var(--btn-color--gray);
+}
+
+
+
+
+/* FOOTER */
+
+
+.footer {
+    width: 100%;
+    position: relative;
+    margin-top: auto;
+    background-color: var(--page--primary-color);
+    padding-top: 40px;
+    padding-bottom: 50px;
+    color: var(--text--primary-color);
+}
+
+
+.footer-inner {
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: space-between;
+}
+
+.footer--contacts {
+    display: grid;
+    row-gap: 25px;
+}
+
+.footer--contacts-icon {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    column-gap: 40px;
+    position: relative;
+}
+
+.contacts-icon--item-link {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.contacts-icon--item-link:active.contacts-icon--item-link::after{
+    content: "";
+    top: 0;
+    left: 0;
+    display: block;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    opacity: 1;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.25);
+}
+/* 
+.contacts-icon--item-link:active.contacts-icon--item-link::after{
+    opacity: 1;
+} */
+
+.footer--support {
+    display: grid;
+    row-gap: 15px;
+    margin-right: 40px;
+}
+
+.footer--support-list {
+    display: grid;
+}
+
+.contacts-icon--item-link path {
+    transition: all 250ms ease-out;
+}
+
+.contacts-icon--item-link:not(.inst):hover path {
+    fill: var(--btn-color--gray);
+}
+
+
+.contacts-icon--item-link.inst:hover .footer-icon-inst-point {
+    fill: var(--btn-color--gray);
+}
+
+.contacts-icon--item-link:hover .footer-icon-inst-border {
+    stroke: var(--btn-color--gray);
+}
+
+
+/* MAIN INFO */
+
+.main-info {
+    margin-top: 150px;
+    margin-bottom: 130px;
+}
+
+.main-info--list{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    column-gap: 20px;
+    row-gap: 20px;
+}
+
+.main-info--list-item {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-size: 100%;
+    width: 500px;
+    height: 300px;
+    transition: all 250ms ease-out;
+}
+
+.info-item--link {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: end;
+    padding: 0 0 40px 40px;
+}
+
+.info-item--link:active .info-item--box::after{
+    opacity: 1;
+}
+
+.main-info--list-item:hover {
+    background-size: 120%;
+}
+
+.info-item--text {
+    position: relative;
+    margin: 10px;
+}
+
+.info-item--box{
+    position: relative;
+    width: fit-content;
+    height: fit-content;
+}
+
+.info-item--box::after{
+    margin-top: 10px;
+    opacity: 0;
+    content: "";
+    position: absolute;
+    display: block;
+    height: 2px;
+    width: 100%;
+    background-color: var(--text--primary-color);
+}

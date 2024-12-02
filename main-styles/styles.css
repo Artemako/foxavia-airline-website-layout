@@ -1,0 +1,159 @@
+/* FONTS */
+
+
+/* REGULAR */
+
+@font-face {
+    font-family: "Din Pro";
+    font-style: normal;
+    font-weight: normal;
+    src: url("./font/dinpro/dinpro.otf");
+}
+
+/* BOLD */
+
+@font-face {
+    font-family: "Din Pro";
+    font-style: normal;
+    font-weight: bold;
+    src: url("./font/dinpro/dinpro_bold.otf");
+}
+
+
+/* BLACK */
+
+@font-face {
+    font-family: "Din Pro Black";
+    font-style: normal;
+    font-weight: normal;
+    src: url("./font/dinpro/dinpro_black.otf");
+}
+
+
+/* ITALIC */
+
+@font-face {
+    font-family: "Din Pro";
+    font-style: italic;
+    font-weight: normal;
+    src: url("./font/dinpro/dinpro_italic.otf");
+}
+
+
+/* PALLETE AND FONT-SIZE*/
+
+:root {
+
+    --page--primary-color: #2F3A71;
+    --text--primary-color: #FFFFFF;
+    --text--description-color: #282828;
+    --text--gray-color: #666666;
+    --bg--primary-color: #FFFFFF;
+    --btn-color--gray: #DADADA;
+    --btn-color--blue: #2F3A71;
+    --btn-color--white: #FFFFFF;
+    --page--green-color:#496A45;
+    --route-line-color:#D9D9D9;
+    --btn-color--half-blue: rgb(47, 58, 113, 0.9);
+
+    --font-size--desc-text: 18px;
+    --font-size--check-box-text: 20px;
+    --font-size--def: 22px;
+    --font-size--input-text: 24px;
+    --font-size--with-image-text: 28px;
+    --font-size--title: 32px;
+    --font-size--currency: 30px;
+}
+
+.color--primary-blue{
+    color:var(--page--primary-color)
+}
+.color--primary-white{
+    color:var(--text--primary-color)
+}
+.color--description-dark-gray{
+    color:var(--text--description-color)
+}
+.color--description-white-gray{
+    color:var(--text--gray-color)
+}
+
+.fz-22{
+    font-size: var(--font-size--def);
+}
+.fz-18{
+    font-size: var(--font-size--desc-text);
+}
+.fz-20{
+    font-size: var(--font-size--check-box-text);
+}
+.fz-24{
+    font-size: var(--font-size--input-text);
+}
+.fz-28{
+    font-size: var(--font-size--with-image-text);
+}
+.fz-32{
+    font-size: var(--font-size--title);
+}
+
+.fw-b{
+    font-weight: bold;
+}
+
+.bg--primary-white{
+    background-color: var(--bg--primary-color);
+}
+.bg--primary-blue{
+    background-color: var(--page--primary-color);
+}
+.bg--white-gray{
+    background-color: var(--btn-color--gray);
+}
+
+
+/* Setup */
+
+*, :not(p) {
+    margin: 0;
+    padding: 0;
+    font-family: "Din Pro";
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    min-width: 1920px;
+    overflow-x: hidden;
+}
+
+.page-container {
+    width: 1540px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.link-decoration {
+    text-decoration: none;
+    color: var(--text--primary-color)
+}
+
+.list-decoration {
+    list-style-type: none;
+}
+
+.main-title{
+    font-size: var(--font-size--title);
+    color: var(--page--primary-color);
+    margin-bottom: 40px;
+}
+
+
+.input-animated{
+    outline: none;
+    appearance: none; /* Убирает встроенные стили браузера */
+    box-shadow: none; 
+    border-style: solid;
+}

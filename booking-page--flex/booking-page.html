@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/booking-page.css">
+    <link rel="stylesheet" href="../main-styles/js/jquery-ui-1.14.1.custom/jquery-ui.min.css">
+    <title>FoxAvia | Booking</title>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header class="header">
+        <div class="page-container">
+            <div class="header-inner">
+
+                <!-- Logo -->
+
+                <a href="#" class="header-logo link-decoration">
+                    <img src="../main-styles/img/header/header--main-logo.png" alt="logo-header"
+                        class="header-logo-img">
+                </a>
+
+                <!-- Nav -->
+
+                <nav class="header-nav-container">
+                    <ul class="header-nav list-decoration">
+                        <li class="header-nav-item"><a href="#"
+                                class="header-nav-item-link link-decoration booking-link">Забронировать рейс</a>
+                        </li>
+                        <li class="header-nav-item"><a href="#" class="header-nav-item-link link-decoration info-link">Полезная
+                                информация</a>
+                        </li>
+                        <li class="header-nav-item"><a href="#" class="header-nav-item-link link-decoration about-link">О
+                                компании</a></li>
+                        <li class="header-nav-item"><a href="#" class="header-nav-item-link link-decoration main-link">На
+                                главную</a></li>
+                    </ul>
+                </nav>
+
+                <!-- SVG and Account btn -->
+
+                <a href="#" class="header-account-btn-box link-decoration account-link">
+                    <svg class="header-account-icon" width="40" height="40" viewBox="0 0 44 44" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="22" cy="22" r="20" stroke="white" stroke-width="3" />
+                        <path
+                            d="M22 22C20.35 22 18.9375 21.4125 17.7625 20.2375C16.5875 19.0625 16 17.65 16 16C16 14.35 16.5875 12.9375 17.7625 11.7625C18.9375 10.5875 20.35 10 22 10C23.65 10 25.0625 10.5875 26.2375 11.7625C27.4125 12.9375 28 14.35 28 16C28 17.65 27.4125 19.0625 26.2375 20.2375C25.0625 21.4125 23.65 22 22 22ZM10 34V29.8C10 28.95 10.219 28.169 10.657 27.457C11.095 26.745 11.676 26.201 12.4 25.825C13.95 25.05 15.525 24.469 17.125 24.082C18.725 23.695 20.35 23.501 22 23.5C23.65 23.499 25.275 23.693 26.875 24.082C28.475 24.471 30.05 25.052 31.6 25.825C32.325 26.2 32.9065 26.744 33.3445 27.457C33.7825 28.17 34.001 28.951 34 29.8V34H10Z"
+                            fill="white" />
+                    </svg>
+                    <div class="header-account-text">Личный кабинет</div>
+                </a>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- SEARCH TICKET -->
+
+    <div class="search-ticket">
+        <div class="page-container">
+            <form class="ticket-box--form bg--primary-white" action="#" method="post">
+                <div class="ticket-box--check-boxes">
+                    <div class="ticket-box--checkbox-item">
+                        <input class="ticket-box--checkbox" type="checkbox" id="one-way" value="one-way"
+                            name="user_interest"><label class="ticket-box--checkbox-text">В
+                            одну
+                            сторону</label><br>
+                    </div>
+                    <div class="ticket-box--checkbox-item">
+                        <input class="ticket-box--checkbox" type="checkbox" id="direct-flight" value="direct-flight"
+                            name="user_interest"><label class="ticket-box--checkbox-text">Только
+                            прямые
+                            рейсы</label><br>
+                    </div>
+                </div>
+
+                <div class="ticket-box--search-ticket">
+                    <div class="search-ticket--to-from-box">
+                        <input class="search-ticket--to-from-box--item input-animated" type="text" id="search-ticket--from"
+                            placeholder="Откуда" name="from">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_843_761)">
+                                <path
+                                    d="M26.0333 18.7C25.8256 18.4893 25.5426 18.3698 25.2468 18.3677C24.9509 18.3656 24.6663 18.4812 24.4556 18.6889C24.2449 18.8967 24.1253 19.1796 24.1232 19.4755C24.1212 19.7714 24.2367 20.056 24.4445 20.2667L28.5778 24.4445H8.70001C8.40532 24.4445 8.12271 24.5615 7.91433 24.7699C7.70596 24.9783 7.5889 25.2609 7.5889 25.5556C7.5889 25.8503 7.70596 26.1329 7.91433 26.3413C8.12271 26.5496 8.40532 26.6667 8.70001 26.6667H28.5778L24.4445 30.7778C24.3416 30.8814 24.2601 31.0043 24.2047 31.1393C24.1493 31.2744 24.1211 31.4191 24.1216 31.5651C24.1221 31.7111 24.1514 31.8555 24.2077 31.9902C24.2641 32.1249 24.3464 32.2472 24.45 32.35C24.5536 32.4529 24.6765 32.5344 24.8115 32.5897C24.9466 32.6451 25.0913 32.6734 25.2373 32.6729C25.3833 32.6724 25.5277 32.6431 25.6624 32.5867C25.7971 32.5304 25.9194 32.4481 26.0222 32.3445L32.8111 25.5556L26.0333 18.7Z"
+                                    fill="#666666" />
+                                <path
+                                    d="M14.7111 20.5C14.9318 20.5013 15.1479 20.4368 15.3318 20.3148C15.5157 20.1928 15.6591 20.0188 15.7437 19.815C15.8284 19.6112 15.8504 19.3867 15.807 19.1704C15.7636 18.954 15.6567 18.7554 15.5 18.6L11.3778 14.4444H31.2444C31.5391 14.4444 31.8217 14.3274 32.0301 14.119C32.2385 13.9106 32.3556 13.628 32.3556 13.3333C32.3556 13.0386 32.2385 12.756 32.0301 12.5477C31.8217 12.3393 31.5391 12.2222 31.2444 12.2222H11.3778L15.5 8.07778C15.6029 7.97418 15.6843 7.85133 15.7397 7.71626C15.7951 7.58118 15.8234 7.43651 15.8228 7.29052C15.8223 7.14452 15.7931 7.00006 15.7367 6.86537C15.6804 6.73069 15.598 6.60842 15.4944 6.50556C15.3908 6.40269 15.268 6.32123 15.1329 6.26584C14.9978 6.21044 14.8532 6.1822 14.7072 6.18272C14.4123 6.18376 14.13 6.30188 13.9222 6.51111L7.13333 13.3333L13.9222 20.1556C14.0242 20.2626 14.1465 20.3481 14.282 20.4073C14.4174 20.4664 14.5633 20.4979 14.7111 20.5Z"
+                                    fill="#666666" />
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_843_761">
+                                    <rect width="40" height="40" fill="white" />
+                                </clipPath>
+                            </defs>
+                        </svg>
+                        <input class="search-ticket--to-from-box--item input-animated" type="text" id="search-ticket--to"
+                            placeholder="Куда" name="to">
+                    </div>
+                    <div class="ticket-box--calendar">
+                        <input class="ticket-box--search-ticket--date input-animated" type="text" id="search-ticket--date" name="date"
+                            placeholder="Вылет - возвращение">
+                        <svg width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M20.4167 20.4167H10.2083V23.3333H20.4167M27.7083 27.7083H7.29167V11.6667H27.7083M27.7083 4.37501H26.25V1.45834H23.3333V4.37501H11.6667V1.45834H8.75V4.37501H7.29167C6.51812 4.37501 5.77625 4.6823 5.22927 5.22928C4.68229 5.77626 4.375 6.51813 4.375 7.29168V27.7083C4.375 28.4819 4.68229 29.2238 5.22927 29.7707C5.77625 30.3177 6.51812 30.625 7.29167 30.625H27.7083C28.4819 30.625 29.2237 30.3177 29.7707 29.7707C30.3177 29.2238 30.625 28.4819 30.625 27.7083V7.29168C30.625 6.51813 30.3177 5.77626 29.7707 5.22928C29.2237 4.6823 28.4819 4.37501 27.7083 4.37501ZM24.7917 14.5833H10.2083V17.5H24.7917V14.5833Z"
+                                fill="#666666" />
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="placement-box">
+                    <input class="search-ticket--to-from-box--item input-animated" type="text"
+                        placeholder="Кол-во пассажиров" name="from">
+                    <input class="search-ticket--to-from-box--item input-animated" type="text"
+                        placeholder="Салон" name="from">
+                </div>
+
+                <div class="button-box">
+                    <button class="ticket-box--button-filters" type="button"> Фильтры </button>
+                    <button class="ticket-box--button-submit" type="button"> Поиск рейсов </button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+    <!-- CURRENCY -->
+
+    <div class="currency">
+        <div class="page-container">
+            <input type="text" placeholder="Валюта" class="currency-input input-animated">
+        </div>
+    </div>
+
+
+    <!-- CALENDAR -->
+
+    <div class="calendar">
+        <div class="page-container">
+            <div class="calendar-inner bg--primary-white">
+                <span class="calendar--date-now fz-24 color--primary-blue">29 Августа, Четверг</span>
+                <ul class="calendar--calendar-list list-decoration">
+                    <li class="calendar--list-item">
+                        <div class="calendar--button" id="Mon">
+                            <span class="calendar--button-text">192,87
+                                <br>
+                                EUR</span>
+                        </div>
+                        <span class="calendar--item-text">пт, 26</span>
+                    </li>
+                    <li class="calendar--list-item">
+                        <div class="calendar--button" id="Tue">
+                            <span class="calendar--button-text">184,95<br>
+                                EUR</span>
+                        </div>
+                        <span class="calendar--item-text">вт, 27</span>
+                    </li>
+                    <li class="calendar--list-item">
+                        <div class="calendar--button" id="Wed">
+                            <span class="calendar--button-text">184,95<br>
+                                EUR</span>
+                        </div>
+                        <span class="calendar--item-text">ср, 28</span>
+                    </li>
+                    <li class="calendar--list-item">
+                        <div class="calendar--button active" id="Thu">
+                            <span class="calendar--button-text">184,95<br>
+                                EUR</span>
+                        </div>
+                        <span class="calendar--item-text">чт, 29</span>
+                    </li>
+                    <li class="calendar--list-item">
+                        <div class="calendar--button" id="Fri">
+                            <span class="calendar--button-text">168,35
+                                <br>
+                                EUR</span>
+                        </div>
+                        <span class="calendar--item-text">пт, 30</span>
+                    </li>
+                    <li class="calendar--list-item">
+                        <div class="calendar--button" id="Sat">
+                            <span class="calendar--button-text">168,35<br>
+                                EUR</span>
+                        </div>
+                        <span class="calendar--item-text">сб, 31</span>
+                    </li>
+                    <li class="calendar--list-item">
+                        <div class="calendar--button" id="Sun">
+                            <span class="calendar--button-text">168,35<br>
+                                EUR</span>
+                        </div>
+                        <span class="calendar--item-text">вс, 1</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- TICKETS -->
+
+    <div class="tickets-box">
+        <div class="page-container">
+            <form action="POST" class="form-box">
+                <div class="visible--way-box">
+                    <div class="visible--way-box--inner">
+                        <div class="way-box--way">
+                            <div class="way-box--from-point way-box--point">
+                                <span class="way-box--point-time">10:35</span>
+                                <span class="way-box--point-terminal">CDG</span>
+                                <span class="way-box--desc">Терминал 1</span>
+                            </div>
+                            <div class="way-box--way-graphics">
+                                <div class="way-box--arrow"></div>
+
+                                <div class="way-box--transfer">1 пересадка</div>
+                                <div class="way-box--arrow"></div>
+                            </div>
+                            <div class="way-box--to-point way-box--point">
+                                <span class="way-box--point-time">13:55</span>
+                                <span class="way-box--point-terminal">BER</span>
+                                <span class="way-box--desc">Терминал 1</span>
+                            </div>
+                        </div>
+                        <div class="way-box--duration">Продолжительность 3h 20min </div>
+                    </div>
+                    <div class="visible--button-box">
+                        <button type="button" class="button-box--economy button-box--button">
+                            <span class="button-box--type-flight">Эконом</span>
+                            <span class="button-box--price"><b>386,76</b><br>
+                                EUR</span>
+                            <span class="button-box--arrow"></span>
+                        </button>
+                        <button type="button" class="button-box--business button-box--button">
+                            <span class="button-box--type-flight">Бизнес</span>
+                            <span class="button-box--price"><b>512,76</b><br>
+                                EUR</span>
+                            <span class="button-box--arrow"></span>
+                        </button>
+                    </div>
+                </div>
+                <div class="invisible--way-box ">
+                    <div class="invisible--airbus-box">
+                        <span class="airbus-box--name">Airbus A350-1000</span>
+                        <img src="./style/img/airbus/__BA_351.png" alt="airbus image" class="airbus-box--image">
+                    </div>
+
+                    <div class="invisible--route-box">
+                        <span class="route-box--title">Париж - Берлин</span>
+                        <span class="route-box--desc">Дата вылета: четверг, 29 августа 2024 г.</span>
+                        <div class="route-box--inner">
+                            <div class="route-box--way">
+                                <div class="route-box--route">
+                                    <span class="route-box--duration-flight">
+                                        1h 15min
+                                    </span>
+                                    <div class="route-box--graphics">
+                                        <div class="route-box-circle"></div>
+                                        <div class="route-box--line"></div>
+                                        <div class="route-box-circle"></div>
+                                    </div>
+                                    <div class="route-box--from-to">
+                                        <div class="from-to--inner">
+                                            <span class="from-to--time">10:35 Париж</span>
+                                            <span class="from-to--airport">Шарль Де Голль (CDG)</span>
+                                            <span class="from-to--count-terminal">Терминал 1</span>
+                                        </div>
+                                        <div class="from-to--inner">
+                                            <span class="from-to--time">11:55 Франкфурт</span>
+                                            <span class="from-to--airport">Франкфурт Интернешнл (FRA)</span>
+                                            <span class="from-to--count-terminal">Терминал 1</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <span class="route-box--count-flight">Номер рейса <b>FX1029</b></span>
+                            </div>
+                            <div class="route-box--transfer">
+                                <svg width="35" height="35" viewBox="0 0 35 35" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <mask id="mask0_467_795" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0"
+                                        y="0" width="35" height="35">
+                                        <rect width="35" height="35" fill="#D9D9D9" />
+                                    </mask>
+                                    <g mask="url(#mask0_467_795)">
+                                        <path
+                                            d="M11.9471 9.17054C11.2104 9.17054 10.5775 8.90598 10.0484 8.37685C9.51948 7.84771 9.25503 7.2148 9.25503 6.47809C9.25503 5.74164 9.51948 5.10884 10.0484 4.57971C10.5775 4.05058 11.2104 3.78601 11.9471 3.78601C12.6838 3.78601 13.3167 4.05058 13.8459 4.57971C14.375 5.10884 14.6396 5.74164 14.6396 6.47809C14.6396 7.2148 14.375 7.84771 13.8459 8.37685C13.3167 8.90598 12.6838 9.17054 11.9471 9.17054ZM20.4168 28.4373H11.3751C10.6384 28.4373 9.96864 28.1867 9.36587 27.6855C8.76285 27.1846 8.38562 26.5658 8.2342 25.8291L5.13232 10.2081H7.36467L10.4888 25.801C10.517 25.9133 10.5848 26.0161 10.6922 26.1094C10.7997 26.203 10.9095 26.2498 11.0218 26.2498H20.4168V28.4373ZM28.1291 31.6343L24.1523 24.7915H13.8207C13.1999 24.7915 12.6657 24.6046 12.218 24.2308C11.7701 23.8567 11.4779 23.3686 11.3415 22.7666L9.68123 14.7684C9.44182 13.6858 9.69192 12.7439 10.4315 11.9428C11.1709 11.1417 12.0538 10.7412 13.0802 10.7412C13.8468 10.7412 14.5461 10.9706 15.1781 11.4295C15.81 11.8886 16.2138 12.5135 16.3896 13.3042L18.0776 21.1456H23.154C23.5988 21.1456 24.012 21.2606 24.3936 21.4905C24.775 21.7205 25.0852 22.0356 25.3244 22.4359L30.0359 30.5406L28.1291 31.6343Z"
+                                            fill="#2F3A71" />
+                                    </g>
+                                    <mask id="mask1_467_795" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="21"
+                                        y="0" width="14" height="14">
+                                        <rect x="21.875" width="13.125" height="13.125" fill="#D9D9D9" />
+                                    </mask>
+                                    <g mask="url(#mask1_467_795)">
+                                        <path
+                                            d="M30.2422 9.13281L31.0078 8.36719L28.9844 6.34375V3.82812H27.8906V6.78125L30.2422 9.13281ZM28.4375 12.0312C27.681 12.0312 26.9701 11.8877 26.3047 11.6006C25.6393 11.3135 25.0605 10.9238 24.5684 10.4316C24.0762 9.93945 23.6865 9.36068 23.3994 8.69531C23.1123 8.02995 22.9688 7.31901 22.9688 6.5625C22.9688 5.80599 23.1123 5.09505 23.3994 4.42969C23.6865 3.76432 24.0762 3.18555 24.5684 2.69336C25.0605 2.20117 25.6393 1.81152 26.3047 1.52441C26.9701 1.2373 27.681 1.09375 28.4375 1.09375C29.194 1.09375 29.9049 1.2373 30.5703 1.52441C31.2357 1.81152 31.8145 2.20117 32.3066 2.69336C32.7988 3.18555 33.1885 3.76432 33.4756 4.42969C33.7627 5.09505 33.9062 5.80599 33.9062 6.5625C33.9062 7.31901 33.7627 8.02995 33.4756 8.69531C33.1885 9.36068 32.7988 9.93945 32.3066 10.4316C31.8145 10.9238 31.2357 11.3135 30.5703 11.6006C29.9049 11.8877 29.194 12.0312 28.4375 12.0312ZM28.4375 10.9375C29.6497 10.9375 30.682 10.5114 31.5342 9.65918C32.3864 8.80697 32.8125 7.77474 32.8125 6.5625C32.8125 5.35026 32.3864 4.31803 31.5342 3.46582C30.682 2.61361 29.6497 2.1875 28.4375 2.1875C27.2253 2.1875 26.193 2.61361 25.3408 3.46582C24.4886 4.31803 24.0625 5.35026 24.0625 6.5625C24.0625 7.77474 24.4886 8.80697 25.3408 9.65918C26.193 10.5114 27.2253 10.9375 28.4375 10.9375Z"
+                                            fill="#2F3A71" />
+                                    </g>
+                                </svg>
+                                <span class="transfer--text"><b>1 остановка</b> в Франкфурт Интернешнл 0h 55min</span>
+                            </div>
+                            <div class="route-box--way">
+                                <div class="route-box--route">
+                                    <span class="route-box--duration-flight">
+                                        1h 15min
+                                    </span>
+                                    <div class="route-box--graphics">
+                                        <div class="route-box-circle"></div>
+                                        <div class="route-box--line"></div>
+                                        <div class="route-box-circle"></div>
+                                    </div>
+                                    <div class="route-box--from-to">
+                                        <div class="from-to--inner">
+                                            <span class="from-to--time">10:35 Париж</span>
+                                            <span class="from-to--airport">Шарль Де Голль (CDG)</span>
+                                            <span class="from-to--count-terminal">Терминал 1</span>
+                                        </div>
+                                        <div class="from-to--inner">
+                                            <span class="from-to--time">11:55 Франкфурт</span>
+                                            <span class="from-to--airport">Франкфурт Интернешнл (FRA)</span>
+                                            <span class="from-to--count-terminal">Терминал 1</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <span class="route-box--count-flight">Номер рейса <b>FX1029</b></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="invisible--add-services">
+                        <div class="add-services--inner">
+                            <span class="add-services--title">Дополнительные услуги</span>
+                            <ul class="add-services--list list-decoration">
+                                <li class="services-list--item">
+                                    <div class="ticket-box--checkbox-item">
+                                        <input class="ticket-box--checkbox checkbox-add" type="checkbox" id="add-services-checkbox-1"
+                                            value="direct-flight" name="user_interest">
+                                        <label class="ticket-box--checkbox-text li-checkbox">
+                                            <svg width="50" height="50" viewBox="0 0 50 50" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <g clip-path="url(#clip0_467_805)">
+                                                    <path
+                                                        d="M46.9682 8.11651C46.9568 4.73436 44.2042 2 40.8108 2H36.8473C33.438 2 30.6786 4.75936 30.69 8.15743L30.7242 17.9152C30.7356 21.2974 33.4882 24.0317 36.8815 24.0317H40.845C44.2544 24.0317 47.0138 21.2724 47.0024 17.8743L46.9682 8.11651ZM45.1871 17.0651C45.1871 19.9518 42.8382 22.2929 39.942 22.2929H37.6752C34.7789 22.2929 32.43 19.9518 32.43 17.0651V13.9648H34.0172V16.5264C34.0172 18.9108 35.9579 20.845 38.3502 20.845H39.438C41.8302 20.845 43.7709 18.9108 43.7709 16.5264V13.9648H45.1871V17.0651ZM45.2897 11.9737H32.43V8.26653C32.43 5.75492 34.471 3.72062 36.991 3.72062H40.7287C43.2487 3.72062 45.2897 5.75492 45.2897 8.26653V11.976V11.9737Z"
+                                                        fill="#2F3A71" />
+                                                    <path
+                                                        d="M10.0765 32.8667C10.0765 32.8667 3.39233 8.69844 3.11867 7.72107C2.64204 6.02545 3.64774 3.61157 5.40373 3.61157C6.34558 3.61157 8.75835 3.61157 9.39917 3.61157C12.3045 3.61157 13.1529 7.14829 13.2008 8.24612C13.2487 9.34396 13.2737 10.31 12.1951 10.31C11.5542 10.31 8.64204 10.31 7.89176 10.31C6.88834 10.3077 6.87465 11.651 7.80054 11.651C8.30909 11.651 11.5656 11.676 11.5656 11.676L14.1996 20.7496C11.463 20.6087 10.2703 22.1975 10.2521 23.8022C10.2361 25.1796 10.0765 32.869 10.0765 32.869V32.8667Z"
+                                                        fill="#2F3A71" />
+                                                    <path
+                                                        d="M19.5222 35.7261C18.2748 35.7261 17.4835 33.7941 17.2509 32.7917L15.5245 25.3569H27.9487V23.9022C27.9487 22.7726 27.0297 21.8566 25.8962 21.8566H13.3398C12.2064 21.8566 11.2874 22.7726 11.2874 23.9022V35.6943C11.2874 36.6967 12.1015 37.5104 13.1072 37.5127H14.1311L11.6454 43.6178C10.7925 45.7112 12.3387 47.9978 14.6032 47.9978H29.5154C31.8415 47.9978 33.3854 45.5998 32.4185 43.4905L29.6203 37.3945H31.9487C32.5781 37.3945 33.089 36.8853 33.089 36.258V35.7602C33.089 35.7602 20.138 35.7238 19.52 35.7238L19.5222 35.7261ZM30.5188 43.8474C31.0251 45.0452 30.1403 46.3704 28.8381 46.3704H15.0456C13.7503 46.3704 12.8677 45.0611 13.3558 43.8656L15.9624 37.5013H27.8415L30.5188 43.8496V43.8474Z"
+                                                        fill="#2F3A71" />
+                                                    <path
+                                                        d="M17.7594 29.9504L18.6921 33.228C18.9635 34.0077 19.2303 34.5304 20.5302 34.5304H33.3603C33.3603 32.0006 31.3033 29.9504 28.7651 29.9504H17.7571H17.7594Z"
+                                                        fill="#2F3A71" />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_467_805">
+                                                        <rect width="44" height="46" fill="white"
+                                                            transform="translate(3 2)" />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                            <span class="check-box-text">Бронирование места</span>
+                                            <input class="search-ticket--to-from-box--item input-animated" type="text" id="place"
+                                                placeholder="Место" name="from">
+                                        </label>
+
+                                    </div>
+                                    <span class="check-box-text--price"><b>+ 11, 99</b> EUR</span>
+                                </li>
+
+
+                                <li class="services-list--item">
+                                    <div class="ticket-box--checkbox-item">
+                                        <input class="ticket-box--checkbox checkbox-add" type="checkbox" id="add-services-checkbox-2"
+                                            value="direct-flight" name="user_interest">
+                                        <label class="ticket-box--checkbox-text li-checkbox">
+                                            <svg width="50" height="50" viewBox="0 0 50 50" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <g clip-path="url(#clip0_467_804)">
+                                                    <path
+                                                        d="M46.1454 15.9481C47.5005 16.2632 48.0003 17.2195 48.0003 18.2102C48.0003 19.2009 47.3419 19.9995 46.0962 20.2151L46.1509 34.6966C47.3948 35.0335 48.1589 35.8231 47.9747 37.2231C47.8343 38.279 47.1285 38.8386 46.1089 39.0089C45.6475 41.1206 44.017 42.6546 41.8502 42.6546C37.0553 42.6546 32.275 42.6546 27.4782 42.6546C26.4952 44.0528 25.4483 45.0091 23.6372 44.9964C18.1346 45 12.6339 45.0054 7.13131 44.9964C4.81501 44.9928 3.02581 43.2215 3.01304 40.916C2.99663 37.6578 2.99663 34.3978 3.01304 31.1396C3.02399 28.8178 4.78036 27.0737 7.11125 27.0429C8.52838 27.0085 11.2696 26.994 11.2696 26.994C11.2696 26.994 11.2696 25.9219 11.2696 25.4129C11.2751 23.5276 12.4406 22.3703 14.3355 22.3703C15.076 22.3703 15.8165 22.363 16.557 22.3703C18.3207 22.392 19.5098 23.5946 19.5208 25.3532C19.5244 25.882 19.5208 26.985 19.5208 26.985H23.1302V19.1954C18.9171 21.1261 13.803 19.0994 12.7688 14.4413C12.0047 11.1034 13.6078 7.74744 16.6828 6.3547C20.792 4.40777 25.6817 6.76039 26.7907 11.0925H28.6565C28.6565 10.4188 28.6638 9.79399 28.6546 9.16735C28.5744 7.10631 30.2523 5 32.3662 5C33.9803 5 35.423 5.00724 37.0444 5.00724C39.2221 5.00724 40.7359 6.92158 40.7614 9.10577C40.7687 9.75233 40.7614 11.1161 40.7614 11.1161C46.4482 11.1161 46.1454 15.1748 46.1454 15.9517V15.9481ZM27.7409 41.1731C27.7409 41.1731 36.9203 41.1858 41.5256 41.2021C43.4206 41.1985 44.6225 39.9796 44.6243 38.0888C44.6043 33.4578 44.597 24.1886 44.597 24.1886L24.6896 24.2882V27.0828C27.1262 27.7004 27.7445 29.3159 27.7445 31.3787C27.7445 34.655 27.7391 41.1713 27.7391 41.1713L27.7409 41.1731ZM20.8029 28.5226H10.0385V43.5167H20.8048V28.5226H20.8029ZM44.6243 19.0849C44.6243 19.0849 44.6316 16.7577 44.6243 15.6312C44.6097 13.8146 43.4042 12.5903 41.5821 12.5849C36.6997 12.6537 26.9366 12.6845 26.9366 12.6845C26.942 14.8307 26.1815 16.6074 24.6476 18.078V19.0849H44.6261H44.6243ZM8.36606 43.5366V28.5117C5.98958 28.5081 4.46301 29.4137 4.46301 31.7445C4.46301 34.6441 4.48672 37.5437 4.48672 40.4433C4.48672 42.8176 5.98775 43.5384 8.36424 43.5384L8.36606 43.5366ZM22.4517 43.562C24.7753 43.562 26.2964 42.7687 26.2854 40.4342C26.2873 37.4169 26.2818 34.3996 26.2818 31.3823C26.2818 29.4155 24.726 28.5099 22.4043 28.5099C22.4043 31.1523 22.4517 38.5217 22.4517 43.5638V43.562ZM39.2531 11.0944V9.21081C39.2531 7.24939 37.9764 6.09572 36.6978 6.09572C36.0522 6.09572 33.6046 6.09572 32.7911 6.09572C31.3102 6.09572 30.2359 7.27656 30.2359 8.89387V11.0944H39.2531ZM20.5713 13.648C20.5713 13.648 21.8553 13.6589 22.5848 13.6589C23.1247 13.6589 23.3144 13.2568 23.3144 12.7986C23.3144 12.3404 23.0809 12.0289 22.5848 12.0289H20.5658C20.5658 12.0289 20.5822 10.6669 20.5604 10.0186C20.5403 9.42271 20.2485 9.13112 19.7396 9.13112C19.2016 9.13112 18.9645 9.39011 18.9554 10.0222C18.9462 10.6706 18.9535 12.0126 18.9535 12.0126C18.9535 12.0126 18.2058 12.0053 17.2373 12.0126C16.4111 12.018 16.2013 12.21 16.1995 12.9073C16.1995 13.476 16.5643 13.6571 16.9509 13.6589C18.0088 13.6589 18.9572 13.6697 18.9572 13.6697C18.9572 13.6697 18.9627 15.2219 18.9627 15.6873C18.9627 16.2506 19.2381 16.4661 19.756 16.4661C20.274 16.4661 20.5658 16.2868 20.5658 15.7018C20.5658 15.249 20.5695 13.648 20.5695 13.648H20.5713ZM16.4056 23.8192C15.6542 23.8192 15.0487 23.8192 14.372 23.8192C12.5555 23.8192 12.6904 25.0688 12.6904 26.9741H18.0197C18.027 25.067 18.2094 23.8192 16.4074 23.8192H16.4056Z"
+                                                        fill="#2F3A71" />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_467_804">
+                                                        <rect width="45" height="40" fill="white"
+                                                            transform="translate(3 5)" />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                            <span class="check-box-text">Дополнительный багаж</span>
+                                        </label>
+                                        <input class="search-ticket--to-from-box--item  input-animated" type="text" id="bag"
+                                            placeholder="+ кг" name="from">
+
+                                    </div>
+                                    <span class="check-box-text--price"><b>+ 15, 99</b> EUR</span>
+
+                                </li>
+
+                                <li class="services-list--item">
+                                    <div class="ticket-box--checkbox-item">
+                                        <input class="ticket-box--checkbox checkbox-add" type="checkbox" id="add-services-checkbox-3"
+                                            value="direct-flight" name="user_interest">
+                                        <label class="ticket-box--checkbox-text li-checkbox" for="add-services-checkbox-3">
+                                            <svg width="50" height="50" viewBox="0 0 50 50" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M17.7428 47.4872C17.1293 47.4872 16.516 46.8739 16.516 46.2604C16.516 45.4429 17.1293 45.0342 17.7428 45.0342H18.5605C9.56577 41.9677 4.86377 33.9949 4.86377 24.5912H45.1363C45.1363 33.9949 40.6388 41.9679 31.4398 45.0342H32.2575C33.0753 45.0342 33.484 45.4432 33.484 46.2604C33.484 46.8739 33.075 47.4872 32.2575 47.4872H17.7428ZM7.31677 27.0442L7.93002 30.1109H34.097C34.506 30.1109 34.9148 30.5197 34.9148 30.9287C34.9148 31.3377 34.5058 31.7464 34.097 31.7464H8.33902C10.7923 38.6972 17.5383 43.6037 25.1023 43.6037C32.4618 43.6037 39.2078 38.6972 41.6613 31.7464H37.9815C37.5725 31.7464 37.1638 31.3377 37.1638 30.9287C37.1638 30.5197 37.5728 30.1109 37.9815 30.1109H42.07C42.479 29.0887 42.479 28.0667 42.6835 27.0442H7.31677ZM13.4498 16.4139C14.063 18.8672 16.3118 20.7069 18.7648 20.7069C21.4225 20.7069 23.671 18.8672 24.08 16.4139H13.4498ZM40.8435 13.9607C41.4565 13.9607 42.0698 14.3697 42.0698 15.1872C42.0698 15.8004 41.4565 16.4137 40.8435 16.4137H26.7378C26.1243 20.2979 22.649 23.1599 18.7648 23.1599C14.4718 23.1599 10.792 19.4802 10.792 15.1872V13.9607H40.8435ZM17.3338 3.33045C17.3338 2.9217 17.5383 2.5127 18.1515 2.5127C18.5603 2.5127 18.7648 2.9217 18.7648 3.33045V10.6899C18.7648 11.0987 18.5605 11.5077 18.1515 11.5077C17.5383 11.5077 17.3338 11.0989 17.3338 10.6899V3.33045ZM21.0135 5.3747C21.0135 4.9657 21.4225 4.55695 21.8313 4.55695C22.2403 4.55695 22.649 4.9657 22.649 5.3747V10.6899C22.649 11.0987 22.24 11.5077 21.8313 11.5077C21.4225 11.5077 21.0135 11.0989 21.0135 10.6899V5.3747ZM13.4498 5.57895C13.4498 5.3747 13.8585 5.1702 14.2675 5.1702C14.6765 5.1702 15.0853 5.3747 15.0853 5.5792V10.6899C15.0853 10.8942 14.6763 11.0987 14.2675 11.0987C13.8588 11.0987 13.4498 10.8942 13.4498 10.6897V5.57895Z"
+                                                    fill="#2F3A71" />
+                                            </svg>
+                                            <span class="check-box-text">Питание на борту</span>
+                                        </label>
+                                    </div>
+                                    <span class="check-box-text--price"><b>+ 8, 99</b> EUR</span>
+
+                                </li>
+
+                                <li class="services-list--item">
+                                    <div class="ticket-box--checkbox-item">
+                                        <input class="ticket-box--checkbox checkbox-add" type="checkbox" id="add-services-checkbox-4"
+                                            value="direct-flight" name="user_interest">
+                                        <label class="ticket-box--checkbox-text li-checkbox" for="add-services-checkbox-4">
+                                            <svg width="50" height="50" viewBox="0 0 50 50" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                                    d="M16.3444 4.50198C18.1242 3.71467 19.9846 3.17034 21.8762 2.86839C23.8708 2.55007 25.9004 2.50188 27.9042 2.7243C30.3613 2.99642 32.7827 3.67436 35.0591 4.75803C37.2544 5.80249 39.3153 7.22563 41.1462 9.02706C42.9786 10.8308 44.4352 12.8721 45.5157 15.0539C46.6353 17.3158 47.3506 19.7287 47.6607 22.1836C47.9746 24.6698 47.8728 27.1983 47.3537 29.6565C46.8448 32.07 45.9346 34.4159 44.6228 36.5882H44.6221C44.4686 36.8411 44.2275 37.0082 43.9616 37.0735H43.9611C43.6951 37.1388 43.4037 37.1027 43.1507 36.9493L43.1389 36.9418C42.8922 36.7882 42.7295 36.5503 42.6654 36.2881C42.5995 36.0221 42.6362 35.7307 42.7898 35.4777H42.789C43.9758 33.5136 44.7987 31.3921 45.2585 29.2116C45.7277 26.9884 45.8202 24.7021 45.5369 22.4551C45.2567 20.2355 44.6091 18.0535 43.5958 16.0071C42.6182 14.0342 41.3003 12.1873 39.6423 10.5557C37.9863 8.92568 36.1215 7.63824 34.1356 6.69247C32.0762 5.71188 29.8877 5.0993 27.6668 4.85253C25.8115 4.64687 23.9342 4.69646 22.0924 5.00041C20.3581 5.2863 18.6547 5.7982 17.0306 6.53461L19.4819 7.18092C19.7678 7.25606 19.9964 7.44047 20.1344 7.67726C20.2705 7.91026 20.3183 8.19485 20.248 8.47634L20.2444 8.48931C20.1691 8.776 19.9846 9.00411 19.7478 9.14251C19.511 9.28001 19.2216 9.32771 18.9357 9.25267L13.8589 7.91455C13.5725 7.83951 13.3445 7.65501 13.2059 7.41821C13.0679 7.18142 13.0207 6.89175 13.0959 6.60596C13.104 6.57632 13.1133 6.54589 13.1244 6.51476C13.1356 6.48302 13.1481 6.45389 13.1605 6.42655L15.2608 1.64123C15.3794 1.37021 15.597 1.17273 15.8525 1.07315H15.853C16.1084 0.973761 16.4009 0.971965 16.6719 1.09051C16.943 1.20926 17.1399 1.42669 17.2398 1.68214V1.68284C17.3395 1.93759 17.3413 2.23076 17.2224 2.50188L16.3444 4.50198ZM31.3772 42.8195C31.0914 42.7437 30.8628 42.5597 30.7248 42.3224C30.5869 42.0856 30.5388 41.7961 30.6147 41.5103C30.6898 41.2244 30.8745 40.9957 31.1113 40.8578C31.3479 40.7198 31.6375 40.672 31.9234 40.7478L36.9698 42.0769C37.1045 42.1086 37.2345 42.1664 37.3495 42.2478C37.46 42.3267 37.5581 42.4287 37.6346 42.551C37.7346 42.7101 37.788 42.8854 37.7975 43.0605C37.8075 43.242 37.7712 43.4235 37.6925 43.5869L35.5983 48.3592C35.4795 48.6302 35.2622 48.8271 35.0067 48.9265H35.0062C34.7508 49.0259 34.458 49.0284 34.1872 48.9098C33.9162 48.7904 33.7192 48.573 33.6199 48.3175C33.5197 48.0622 33.5179 47.7689 33.6365 47.4986L34.5104 45.5076C32.7319 46.2956 30.8707 46.8417 28.9786 47.1444C26.9828 47.4638 24.9521 47.5129 22.9455 47.2916C20.4861 47.0207 18.0626 46.3434 15.784 45.2597C13.5855 44.2139 11.5219 42.7903 9.69001 40.987C7.85695 39.1831 6.40038 37.14 5.3198 34.9558C4.2 32.6908 3.48484 30.2737 3.176 27.8148C2.86338 25.3266 2.96715 22.7959 3.48793 20.3357C3.99864 17.9221 4.91148 15.5764 6.22705 13.4048C6.38052 13.1511 6.6216 12.9841 6.88813 12.9189C7.15416 12.8534 7.44553 12.8903 7.69849 13.0435C7.95204 13.1971 8.11918 13.4382 8.18434 13.7049C8.2496 13.9708 8.21298 14.2623 8.05951 14.5152C6.86887 16.4806 6.04245 18.604 5.57954 20.7876C5.10725 23.0125 5.01346 25.3006 5.29555 27.5494C5.57455 29.7697 6.22146 31.9533 7.23548 34.0008C8.21358 35.9755 9.53344 37.8241 11.1938 39.459C12.8516 41.0902 14.7183 42.3789 16.7061 43.3247C18.7679 44.3053 20.9594 44.9179 23.1829 45.1634C25.039 45.3678 26.9176 45.3163 28.7611 45.0099C30.4967 44.721 32.2018 44.2058 33.8285 43.4651L31.3772 42.8195Z"
+                                                    fill="#2F3A71" />
+                                                <g clip-path="url(#clip0_524_597)">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                                        d="M13.3623 17.5488L37.482 17.5494C37.8552 17.5478 38.1954 17.7017 38.4418 17.9488C38.6876 18.196 38.8407 18.5381 38.8407 18.9133V31.0928C38.8407 31.4685 38.6876 31.81 38.4418 32.0572C38.1954 32.3044 37.8552 32.4583 37.4826 32.4583L13.3623 32.4572C12.9912 32.4588 12.651 32.3049 12.4046 32.0572L12.402 32.0546C12.1572 31.8074 12.0037 31.4664 12.0037 31.0928V28.3338C12.0037 28.1436 12.1462 27.9865 12.3297 27.9644C12.9707 27.8252 13.5326 27.4679 13.9326 26.9751C14.3309 26.4834 14.5705 25.8547 14.5705 25.169C14.5705 24.4834 14.3309 23.8541 13.9326 23.3629C13.5263 22.8623 12.9534 22.5013 12.2998 22.3674C12.2166 22.3503 12.1418 22.3048 12.0882 22.2386C12.0345 22.1724 12.0052 22.0897 12.0052 22.0043L12.0037 18.9143C12.0037 18.5386 12.1567 18.1965 12.4025 17.9494C12.6489 17.7017 12.9891 17.5478 13.3623 17.5488ZM33.087 31.6166C33.087 31.6519 33.0901 31.6846 33.0969 31.7157L18.3166 31.7147V18.2909H33.0969C33.0901 18.322 33.087 18.3546 33.087 18.39V19.2169C33.087 19.7613 33.9094 19.7613 33.9094 19.2169V18.39C33.9094 18.3546 33.9062 18.3214 33.8994 18.2909H37.482C37.6514 18.2919 37.8065 18.3626 37.9187 18.4748C38.0303 18.5876 38.1006 18.7436 38.1006 18.9133V31.0928C38.1006 31.263 38.0303 31.4185 37.9187 31.5307C37.806 31.644 37.6514 31.7141 37.4826 31.7157H33.8994C33.9062 31.6846 33.9094 31.6519 33.9094 31.6166V30.7903C33.9094 30.2458 33.087 30.2458 33.087 30.7903V31.6166ZM33.087 29.137C33.087 29.6814 33.9094 29.6814 33.9094 29.137V28.3101C33.9094 27.7657 33.087 27.7657 33.087 28.3101V29.137ZM33.087 26.6568C33.087 27.2012 33.9094 27.2012 33.9094 26.6568V25.8299C33.9094 25.2855 33.087 25.2855 33.087 25.8299V26.6568ZM33.087 24.1767C33.087 24.7211 33.9094 24.7211 33.9094 24.1767V23.3503C33.9094 22.8059 33.087 22.8059 33.087 23.3503V24.1767ZM33.087 21.6965C33.087 22.2409 33.9094 22.2409 33.9094 21.6965V20.8701C33.9094 20.3257 33.087 20.3257 33.087 20.8701V21.6965ZM22.5173 27.8932C22.5173 27.6302 22.6661 27.3736 22.9078 27.0858L21.5088 26.1962C21.4207 26.1577 21.4223 26.1029 21.4737 26.0397L21.7703 25.7862C21.8249 25.7525 21.8815 25.7382 21.9428 25.7551L23.6694 26.0486L25.1077 24.4823L21.7494 22.1977C21.665 22.1471 21.6576 22.0902 21.7447 22.0248L22.229 21.6359L26.6078 22.8733L27.9014 21.4825C28.3354 21.1052 28.7574 20.936 29.0808 21.0161C29.259 21.0604 29.3224 21.1136 29.377 21.2823C29.4834 21.6122 29.3182 22.0554 28.9257 22.5118L27.5424 23.813L28.7731 28.2152L28.3863 28.7027C28.3208 28.7902 28.2642 28.7828 28.2144 28.6975L25.9416 25.3214L24.3838 26.7675L24.6763 28.503C24.6925 28.5646 24.6789 28.6221 24.6454 28.6764L24.3927 28.9747C24.3298 29.0263 24.2753 29.0279 24.237 28.9399L23.3523 27.5327C23.065 27.7767 22.8092 27.9264 22.5466 27.9259C22.522 27.9254 22.5173 27.9169 22.5173 27.8932Z"
+                                                        fill="#2F3A71" />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_524_597">
+                                                        <rect width="26.837" height="14.9094" fill="white"
+                                                            transform="translate(12.0037 17.5488)" />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+
+                                            <span class="check-box-text">Возможность обмена и возврата билета</span>
+                                        </label>
+                                    </div>
+                                    <span class="check-box-text--price"><b>+ 20, 99</b> EUR</span>
+
+                                </li>
+
+                                <li class="services-list--item">
+                                    <div class="ticket-box--checkbox-item">
+                                        <input class="ticket-box--checkbox checkbox-add" type="checkbox" id="add-services-checkbox-5"
+                                            value="direct-flight" name="user_interest">
+                                        <label class="ticket-box--checkbox-text li-checkbox" for="add-services-checkbox-5">
+                                            <svg width="50" height="50" viewBox="0 0 50 50" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg" id="svg-1">
+                                                <g clip-path="url(#clip0_538_814)">
+                                                    <path
+                                                        d="M8.1289 23.4698C7.08659 24.5121 7.08659 26.2084 8.1289 27.261C9.1712 28.3033 10.8675 28.3033 11.92 27.261C19.1344 20.0466 30.8757 20.0466 38.0901 27.261C38.6112 27.7821 39.2959 28.0478 39.9805 28.0478C40.6652 28.0478 41.3498 27.7821 41.871 27.261C42.9133 26.2187 42.9133 24.5224 41.871 23.4698C32.572 14.1606 17.4279 14.1606 8.1289 23.4698Z"
+                                                        fill="#2F3A71" />
+                                                    <path
+                                                        d="M15.3638 30.7046C14.3215 31.7469 14.3215 33.4432 15.3638 34.4957C16.4061 35.538 18.1024 35.538 19.1549 34.4957C22.3738 31.2666 27.6262 31.2666 30.8451 34.4957C31.3662 35.0169 32.0509 35.2826 32.7355 35.2826C33.4202 35.2826 34.1048 35.0169 34.626 34.4957C35.6683 33.4534 35.6683 31.7571 34.626 30.7148C29.3225 25.3909 20.6775 25.3909 15.3638 30.7046Z"
+                                                        fill="#2F3A71" />
+                                                    <path
+                                                        d="M24.9999 43.8969C26.9695 43.8969 28.5662 42.3002 28.5662 40.3306C28.5662 38.361 26.9695 36.7643 24.9999 36.7643C23.0303 36.7643 21.4336 38.361 21.4336 40.3306C21.4336 42.3002 23.0303 43.8969 24.9999 43.8969Z"
+                                                        fill="#2F3A71" />
+                                                    <path
+                                                        d="M49.2183 16.1123C35.8625 2.76675 14.1375 2.76675 0.781729 16.1123C-0.260576 17.1547 -0.260576 18.851 0.781729 19.9035C1.82403 20.9458 3.52034 20.9458 4.57286 19.9035C15.8338 8.63227 34.1662 8.63227 45.4374 19.9035C45.9585 20.4246 46.6432 20.6903 47.3278 20.6903C48.0125 20.6903 48.6971 20.4246 49.2183 19.9035C50.2606 18.8612 50.2606 17.1649 49.2183 16.1123Z"
+                                                        fill="#2F3A71" />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_538_814">
+                                                        <rect width="50" height="50" fill="white" />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+
+
+                                            <span class="check-box-text">Подключение к Интернету</span>
+                                        </label>
+                                    </div>
+                                    <span class="check-box-text--price"><b>+ 2, 99</b> EUR</span>
+
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="submit-box">
+                            <div class="submit-box--title">
+                                <span class="submit-box--result">Итого:</span>
+                                <span><b class="submit-box--price">386,76</b>EUR</span>
+                            </div>
+                            <button class="submit-box--button ticket-box--button-submit form-link" type="button"> Продолжить </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+
+    <footer class="footer">
+        <div class="page-container">
+            <div class="footer-inner">
+
+                <div class="footer--contacts-box">
+
+                    <div class="footer--contacts-title"><span>Следите за нами</span></div>
+
+                    <ul class="footer-contacts-icons list-decoration ">
+                        <li class="footer--contacts-item inst"><a href="#"
+                                class="footer--item-link link-decoration footer--icon-inst">
+                                <svg width="50" height="50" viewBox="0 0 50 50" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path class="footer-icon-inst-point"
+                                        d="M35.4167 17.7083C37.1426 17.7083 38.5417 16.3091 38.5417 14.5833C38.5417 12.8574 37.1426 11.4583 35.4167 11.4583C33.6908 11.4583 32.2917 12.8574 32.2917 14.5833C32.2917 16.3091 33.6908 17.7083 35.4167 17.7083Z"
+                                        fill="white" />
+                                    <path class="footer-icon-inst-border"
+                                        d="M33.3333 6.25C39.0833 6.25 43.75 10.9167 43.75 16.6667V33.3333C43.75 39.0833 39.0833 43.75 33.3333 43.75H16.6667C10.9167 43.75 6.25 39.0833 6.25 33.3333V16.6667C6.25 10.9167 10.9167 6.25 16.6667 6.25H25H33.3333Z"
+                                        stroke="white" stroke-width="4.16667" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path class="footer-icon-inst-border"
+                                        d="M25 16.6667C29.6042 16.6667 33.3333 20.3959 33.3333 25.0001C33.3333 29.6042 29.6042 33.3334 25 33.3334C20.3958 33.3334 16.6667 29.6042 16.6667 25.0001C16.6667 20.3959 20.3958 16.6667 25 16.6667Z"
+                                        stroke="white" stroke-width="4.16667" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+
+                            </a></li>
+
+                        <li class="footer--contacts-item"><a href="#" class="footer--item-link link-decoration">
+                                <svg width="50" height="50" viewBox="0 0 50 50" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M38.0078 4.6875H44.9023L29.8438 21.8945L47.5586 45.3125H33.6914L22.8223 31.1133L10.4004 45.3125H3.49609L19.5996 26.9043L2.61719 4.6875H16.8359L26.6504 17.666L38.0078 4.6875ZM35.5859 41.1914H39.4043L14.7559 8.59375H10.6543L35.5859 41.1914Z"
+                                        fill="white" />
+                                </svg>
+                            </a></li>
+
+                        <li class="footer--contacts-item"><a href="#" class="footer--item-link link-decoration">
+                                <svg width="50" height="50" viewBox="0 0 50 50" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M9.375 3.125C7.7174 3.125 6.12769 3.78348 4.95558 4.95558C3.78348 6.12769 3.125 7.7174 3.125 9.375V40.625C3.125 42.2826 3.78348 43.8723 4.95558 45.0444C6.12769 46.2165 7.7174 46.875 9.375 46.875H40.625C42.2826 46.875 43.8723 46.2165 45.0444 45.0444C46.2165 43.8723 46.875 42.2826 46.875 40.625V9.375C46.875 7.7174 46.2165 6.12769 45.0444 4.95558C43.8723 3.78348 42.2826 3.125 40.625 3.125H9.375ZM12.8188 16.5531C13.8092 16.5531 14.759 16.1597 15.4594 15.4594C16.1597 14.759 16.5531 13.8092 16.5531 12.8188C16.5531 11.8283 16.1597 10.8785 15.4594 10.1781C14.759 9.47782 13.8092 9.08438 12.8188 9.08438C11.8283 9.08438 10.8785 9.47782 10.1781 10.1781C9.47782 10.8785 9.08438 11.8283 9.08438 12.8188C9.08438 13.8092 9.47782 14.759 10.1781 15.4594C10.8785 16.1597 11.8283 16.5531 12.8188 16.5531ZM15.9438 40.0406V19.4813H9.69375V40.0406H15.9438ZM20.0938 19.4813H26.3438V22.2344C27.2656 20.7906 29.2906 18.8469 33.0562 18.8469C37.55 18.8469 39.9906 21.825 39.9906 27.4906C39.9906 27.7625 40.0156 29.0031 40.0156 29.0031V40.0375H33.7656V29.0062C33.7656 27.4906 33.4469 24.5125 30.0781 24.5125C26.7062 24.5125 26.4219 28.2563 26.3438 30.7063V40.0375H20.0938V19.4813Z"
+                                        fill="white" />
+                                </svg>
+
+                            </a></li>
+
+                    </ul>
+                </div>
+
+
+                <div class="footer--support-box">
+                    <div class="footer--support-title"><span>Поддержка</span></div>
+
+                    <ul class="footer--support-contacts list-decoration">
+                        <li class="footer-support-contacts-item"><a href="mailto:support@foxu.com"
+                                class="footer--support-contacts-link link-decoration">support@foxu.com</a></li>
+                        <li class="footer-support-contacts-item"><a href="tel:+7(812)0479265"
+                                class="footer--support-contacts-link link-decoration">+7 (812) 047 9265</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="./js/jQuerry.js"></script>
+    <script src="../main-styles/js/jquery-ui-1.14.1.custom/jquery-ui.min.js"></script>
+    <script src="../main-styles/js/jquery-ui-1.14.1.custom/jquery-ui.js"></script>
+    <script src="./js/booking-page.js"></script>
+    <script src="../main-styles/js/main.js"></script>
+</body>
+
+</html>
